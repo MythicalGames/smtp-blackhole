@@ -1,10 +1,10 @@
 FROM ubuntu:22.04
 
-MAINTAINER Tremolo Security, Inc. - Docker <docker@tremolosecurity.com>
+MAINTAINER Mythical Games
 
 
-LABEL io.k8s.description="Blackhole" \
-      io.k8s.display-name="Blackhole" 
+LABEL io.k8s.description="smtp-blackhole" \
+      io.k8s.display-name="smtp-blackhole"
 
 RUN apt-get update;apt-get -y install python3 python3-pip && \
     apt-get -y upgrade;apt-get clean;rm -rf /var/lib/apt/lists/*; \
@@ -14,7 +14,6 @@ RUN apt-get update;apt-get -y install python3 python3-pip && \
     pip3 install blackhole
 
 ADD bh-config.txt /usr/local/blackhole/bh-config.txt
-
 
 
 USER 431

@@ -11,4 +11,3 @@ $ kubectl create deployment blackhole --image=tremolosecurity/smtp-blackhole -n 
 $ kubectl expose deployment/blackhole --type=ClusterIP --port 1025 --target-port=1025 -n blackhole
 ```
 
-In the OpenUnison configuration, use the host `blackhole.blackhole.svc.cluster.local` and the port `1025` with TLS disabled.
