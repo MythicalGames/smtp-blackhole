@@ -12,8 +12,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: smtp
       protocol: TCP
-      name: http
+      name: smtp
   selector:
     {{- include "smtp-blackhole.selectorLabels" . | nindent 4 }}
